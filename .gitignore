@@ -1,0 +1,16 @@
+.project
+.buildpath
+.settings/*
+
+*.DS_Store
+*.zip
+*.gz
+*.tar
+*.psd
+*.numbers
+*.xls
+*.xlsx
+*.pages
+*.doc
+*.docx
+*.sublime-workspace

@@ -1,0 +1,178 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400)
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:700)
+
+@import _normalize.scss
+
+$content-width: 580px
+$light-text: #aaa
+
+/* This is used as the traditional .clearfix class */
+.group:before, .group:after
+  content: ''
+  display: table
+.group:after
+  clear: both
+.group
+  zoom: 1
+
+  
+h1, h2, h3
+  margin: 0
+  padding: 0
+  font-weight: 100
+  line-height: 100%
+
+h1
+  font-size: 5em
+  
+h2
+  font-size: 1.5em
+  
+h3
+  font-size: 1.3em
+  font-weight: 400
+
+strong
+  font-weight: 400
+  
+button
+  padding: 5px 20px
+  background-color: #800
+  color: #fff
+  border: 0
+  border-radius: 5px
+  &:hover
+    background-color: #a00
+  &:active
+    background-color: #000
+  
+body
+  margin: 0
+  padding: 0
+  font-family: "Roboto"
+  font-weight: 300
+  color: #333
+
+@mixin roll
+  background-image: url(/images/roll.png)
+@mixin tuna
+  background-image: url(/images/tuna.png)
+@mixin salmon
+  background-image: url(/images/salmon.png)
+@mixin whitetail
+  background-image: url(/images/whitetail.png)
+@mixin shrimp
+  background-image: url(/images/shrimp.png)
+@mixin egg
+  background-image: url(/images/egg.png)
+
+  
+.banner
+  text-align: center
+  margin: 0 0 20px 0
+  padding: 15px 0 20px 0
+  color: #fff
+  background-color: #000
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: 100% 100%
+  
+  h1
+    margin: 0 0 10px 0
+    
+    .nyc
+      font-family: "Roboto Slab"
+      font-weight: 400
+    
+.spots
+  margin: 0 auto 30px auto
+  padding: 0 20px
+  max-width: $content-width
+  list-style-type: none
+  counter-reset: spots
+  
+  li
+    position: relative
+    margin: 0 0 30px 0
+    padding: 0
+    @extend .group
+    
+  li:before
+    float: left
+    width: 50px
+    height: 40px
+    padding: 10px 0 0 0
+    margin: 0 10px 10px 0
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: 100% auto
+    text-align: center
+    color: #fff
+    font-size: 1.3em
+    font-weight: 300
+    text-shadow: 0px 0px 4px rgba(0,0,0,1)
+    counter-increment: spots
+    content: "#" counter(spots)
+    @include roll
+      
+  li:nth-child(1):before
+    @include egg
+
+  li:nth-child(2):before
+    @include tuna
+      
+  li:nth-child(3):before
+    @include salmon
+
+  li:nth-child(4):before
+    @include whitetail
+
+  li:nth-child(5):before
+    @include shrimp
+
+  .voting
+    float: right
+    text-align: right
+    margin: 0 0 0 10px
+
+    label
+      color: $light-text
+      
+  .votes
+    margin: 0 0 5px 0
+    text-align: right
+  
+  p
+    margin: 5px 0 10px 0
+    padding: 0
+    color: $light-text
+
+.submit
+  margin: 0 auto 60px auto
+  padding: 0 20px
+  max-width: $content-width
+  @extend .group
+  
+  h2
+    margin: 0 0 10px 0
+
+  input
+    float: left
+    padding: 3px
+      
+  input[name="name"]
+    width: 160px
+    margin-right: 10px
+    
+  input[name="description"]
+    width: 260px
+
+  button
+    float: right
+    
+.about
+  margin: 0 auto 30px auto
+  padding: 0 20px
+  max-width: $content-width
+  //color: $light-text
+  font-size: 0.9em

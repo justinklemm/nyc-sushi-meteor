@@ -1,0 +1,59 @@
+<head>
+  <title>NYC Sushi - Vote for your favorite spot</title>
+  <meta name="description" content="A simple app that lets you vote on your favorite NYC Sushi spot. Built with Meteor.">
+</head>
+
+
+<body>
+  <div class="site-container">
+    {{>header}}
+
+    {{>about}}
+    
+    {{>spots}}
+    
+    {{>submit}}
+  </div>
+</body>
+
+
+<template name="header">
+  <header class="banner">
+    <h1><span class="nyc">NYC</span> Sushi</h1>
+    <h2>Vote for your favorite spot</h2>
+  </header>
+</template>
+
+
+<template name="spots">
+  <ol class="spots">
+    {{#each spots}}
+      <li>
+        <div class="voting">
+          <div class="votes"><label>Votes:</label> {{votes}}</div>
+          <button class="btn-vote">Vote!</button>
+        </div>
+        <h3>{{name}}</h3>
+        <p>{{description}}</p>
+      </li>
+    {{/each}}
+  </ol>
+
+</template>
+
+
+<template name="submit">
+  <div class="submit">
+    <h2>Submit a new spot</h2>
+    <input type="text" id="input-name" name="name" placeholder="Restaurant Name" maxlength="40">
+    <input type="text" id="input-description" name="description" placeholder="A brief description..." maxlength="100">
+    <button class="btn-submit">Submit</button>
+  </div>
+</template>
+
+
+<template name="about">
+  <div class="about">
+    <p><strong>This is a simple app developed by <a href="http://justinklemm.com">Justin Klemm</a> using <a href="http://meteor.com/">Meteor</a> - a Javscript framework for quickly building web apps.</strong> I don't expect anyone to be impressed with the functionality here (<em>besides we all know Sushi Yasuda is the best anyway</em>). Rather, this was a brief expriment to see what could be built with Meteor in just an hour or two. Feel free to reach out to me on twitter <a href="https://twitter.com/justinklemm">@justinklemm</a>. Blog post <a href="http://justinklemm.com">here</a>. Github repo with code <a href="https://github.com/justinklemm/nyc-sushi-meteor">here</a>.</p>
+  </div>
+</template>
