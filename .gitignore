@@ -13,4 +13,5 @@
 *.pages
 *.doc
 *.docx
+*.sublime-project
 *.sublime-workspace
