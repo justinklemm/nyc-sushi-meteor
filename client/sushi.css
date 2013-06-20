@@ -583,5 +583,14 @@ body {
 .about {
   margin: 0 auto 30px auto;
   padding: 0 20px;
-  max-width: 580px;
-  font-size: 0.9em; }
+  max-width: 580px; }
+  .about p {
+    font-size: 0.9em;
+    line-height: 145%; }
+
+@media screen and (max-width: 620px) {
+  .submit input[name="name"], .submit input[name="description"], .submit button {
+    float: none;
+    margin-bottom: 5px; }
+  .submit input[name="name"], .submit input[name="description"] {
+    width: 95%; } }

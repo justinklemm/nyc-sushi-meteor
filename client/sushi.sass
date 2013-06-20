@@ -174,5 +174,18 @@ body
   margin: 0 auto 30px auto
   padding: 0 20px
   max-width: $content-width
-  //color: $light-text
-  font-size: 0.9em
+  
+  p
+    font-size: 0.9em
+    line-height: 145%
+
+
+@media screen and (max-width: 620px)
+  .submit
+    input[name="name"], input[name="description"], button
+      float: none
+      margin-bottom: 5px
+
+    input[name="name"], input[name="description"]
+      width: 95%
+
